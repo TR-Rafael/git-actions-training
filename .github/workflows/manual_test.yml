@@ -1,0 +1,27 @@
+name: teste
+
+on:
+  workflow_dispatch:
+    inputs:
+      tenant:
+        required: true
+        type: choice
+        description: Which tenant does this test belong to?
+        options:
+          - QBE
+          - IOINSURE
+      record-execution:
+        required: true
+        type: boolean
+        description: check if want to generate an artefact with video of the execution or not.
+      path-for-test:
+        description: put the relative path to the e2e test file you want to run alone in gitActions.
+        required: true
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send greeting
+        run: echo "${{ github.event.inputs.record-execution }} ${{ github.event.inputs.record-execution }} ${{ github.event.inputs.path-for-test }}"
