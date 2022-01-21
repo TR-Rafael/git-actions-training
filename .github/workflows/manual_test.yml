@@ -24,4 +24,4 @@ jobs:
 
     steps:
       - name: Send greeting
-        run: echo "${{ github.event.inputs.record-execution }} ${{ github.event.inputs.record-execution }} ${{ github.event.inputs.path-for-test }}"
+        run: echo "${{ github.event.inputs.tenant }} ${{ github.event.inputs.record-execution }} ${{ github.event.inputs.path-for-test }}"
