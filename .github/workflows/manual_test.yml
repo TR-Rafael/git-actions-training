@@ -13,9 +13,9 @@ on:
       record-execution:
         required: true
         type: boolean
-        description: check if want to generate an artefact with video of the execution or not.
+        description: Check if want to generate an artefact with video of the execution or not.
       path-for-test:
-        description: put the relative path to the e2e test file you want to run alone in gitActions.
+        description: Put the relative path to the e2e test file you want to run alone in gitActions.
         required: true
 
 jobs:
@@ -24,4 +24,5 @@ jobs:
 
     steps:
       - name: Send greeting
+        if: github.event.inputs.tenant == 'IOINSURE'
         run: echo "${{ github.event.inputs.tenant }} ${{ github.event.inputs.record-execution }} ${{ github.event.inputs.path-for-test }}"
