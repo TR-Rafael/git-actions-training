@@ -1,0 +1,15 @@
+name: teste 2
+
+on:
+  workflow_run:
+    workflows: [ "teste" ]
+    types:
+      - completed
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: rodou
+        run: echo "oi"
