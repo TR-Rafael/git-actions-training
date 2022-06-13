@@ -23,6 +23,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Send greeting
+      - name: Send greeting - ${{ github.event.inputs.path-for-test.split('/')}}
         if: github.event.inputs.tenant == IOINSURE
         run: echo "${{ github.event.inputs.tenant }} ${{ github.event.inputs.record-execution }} ${{ github.event.inputs.path-for-test }}"
